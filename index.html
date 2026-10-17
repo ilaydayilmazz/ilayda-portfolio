@@ -170,7 +170,7 @@ img{display:block;max-width:100%}
   .dance .saz{margin-left:clamp(4px,2vw,12px)}
   @keyframes halay{from{transform:translateX(-4px) rotate(-6deg)}to{transform:translateX(4px) rotate(6deg)}}
   .herd .horse{--hw:clamp(90px,28vw,170px)!important}
-  .usta{width:clamp(58px,17vw,84px)} .bubble{right:calc(clamp(58px,17vw,84px) - 22px);bottom:calc(clamp(58px,17vw,84px) * 1.02);width:clamp(96px,30vw,150px);padding:4px 6px}
+  .usta{width:clamp(58px,17vw,84px)} .bubble{right:calc(clamp(58px,17vw,84px) - 22px);bottom:calc(clamp(58px,17vw,84px) * 1.02);width:clamp(140px,42vw,180px);padding:4px 6px}
   .plate{left:20px;right:20px;margin:auto;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform-origin:90% 100%}
 }
 @media (prefers-reduced-motion:reduce){
@@ -216,7 +216,7 @@ img{display:block;max-width:100%}
 <main class="sheet" id="sheet" aria-label="Ilayda's drawings">
   <div class="mid">
     <img class="me" src="img/me4.webp" alt="Ilayda's tiny painted self-portrait with dark glasses">
-    <img class="name" src="img/t-ilayda.png" alt="Ilayda">
+    <img class="name" src="img/t-ilayda.png?v=4" alt="Ilayda">
     <div class="sub">Drawings · Paintings · Clay — London</div>
     <div class="dance" aria-label="Three friends dancing under a string of lights while a saz player plays">
       <img class="lights" src="img/lights.webp" alt="">
@@ -233,7 +233,7 @@ img{display:block;max-width:100%}
 <div class="herd" id="herd" aria-hidden="true"></div>
 
 <button class="usta" id="usta" type="button" aria-expanded="false" aria-controls="plate" aria-label="Who am I? Open the about plate">
-  <img class="bubble" src="img/t-whoami.png" alt="">
+  <img class="bubble" src="img/t-whoami.png?v=4" alt="">
   <img src="img/doner.webp" alt="">
 </button>
 
@@ -274,7 +274,7 @@ const items=[
  {area:'b',cls:'c-legs',paint:1,k:'square',html:'<img src="img/legs.webp" alt="Ink figure lying with legs up the wall">',s:'52%',r:0},
  {area:'c',cls:'c-wall',k:'square',html:'<div class="stack"><div class="eyes"><div class="grow"><img id="eyes" src="img/eyes.webp" alt="Two eyes peeking over a brick wall"></div></div><img src="img/wall.webp" alt=""></div>',s:'88%',r:0},
  {area:'d',cls:'c-ceramic',k:'circle',html:'<img src="img/ceramic.webp" alt="Masked figure, glazed ceramic">',s:'60%',r:3,c:'#5fbfb0',pastel:1},
- {area:'e',cls:'c-itsok',paint:1,k:'square',html:'<img class="txt" src="img/t-itsok.png" alt="it\'s ok."><img class="fig" src="img/itsok.webp" alt="Blue line figure with curly hair, smiling">',s:'80%',r:0},
+ {area:'e',cls:'c-itsok',paint:1,k:'square',html:'<img class="txt" src="img/t-itsok.png?v=4" alt="it\'s ok."><img class="fig" src="img/itsok.webp" alt="Blue line figure with curly hair, smiling">',s:'80%',r:0},
  {area:'f',cls:'c-fez',k:'square',html:'<img src="img/fez.webp" alt="Fez dancer, gouache">',s:'70%',r:0},
  {area:'g',cls:'c-fish',k:'circle',html:'<img src="img/fishgirl.webp" alt="Girl with a fish in a bag">',s:'76%',r:-2},
  {area:'h',cls:'c-poodle',k:'circle',html:'<img src="img/poodle.webp" alt="Poodle in a black jumper">',s:'60%',r:3},
