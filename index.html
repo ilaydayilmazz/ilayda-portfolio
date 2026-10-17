@@ -157,11 +157,20 @@ img{display:block;max-width:100%}
 .plate .close:focus-visible{outline:2px solid var(--pencil);outline-offset:2px}
 
 @media (max-width:820px){
-  .mid{padding-block:10px 20px}
-  .sheet{--row:230px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"M M";gap:10px}
-  .mid{grid-row:span 2}
+  .mid{padding-block:6px 28px;grid-row:auto;height:auto;min-height:0}
+  .sheet{--row:clamp(170px,52vw,230px);grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"M M";grid-template-rows:auto;gap:10px;padding-bottom:180px}
   .c-pool{grid-column:span 2}
-  .usta{width:84px} .bubble{right:56px;bottom:88px;width:150px}
+  .mid .me{width:clamp(70px,22vw,104px)}
+  .mid .name{width:min(300px,74vw)}
+  .dance{width:min(360px,92%);margin-top:10px}
+  .dance .row{gap:clamp(2px,1vw,6px)}
+  .dance .d{height:clamp(52px,18vw,88px)}
+  .dance .d1,.dance .d3{height:clamp(48px,16.5vw,82px)}
+  .dance .saz,.dance .saz img{height:clamp(64px,22vw,108px)}
+  .dance .saz{margin-left:clamp(4px,2vw,12px)}
+  @keyframes halay{from{transform:translateX(-4px) rotate(-6deg)}to{transform:translateX(4px) rotate(6deg)}}
+  .herd .horse{--hw:clamp(90px,28vw,170px)!important}
+  .usta{width:clamp(58px,17vw,84px)} .bubble{right:calc(clamp(58px,17vw,84px) - 22px);bottom:calc(clamp(58px,17vw,84px) * 1.02);width:clamp(96px,30vw,150px);padding:4px 6px}
   .plate{left:20px;right:20px;margin:auto;bottom:calc(120px + env(safe-area-inset-bottom,0px));transform-origin:90% 100%}
 }
 @media (prefers-reduced-motion:reduce){
