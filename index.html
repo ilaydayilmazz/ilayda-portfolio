@@ -147,12 +147,12 @@ img{display:block;max-width:100%}
   transform-origin:100% 100%;transform:translate(60px,30px) scale(.1) rotate(-100deg);opacity:0;pointer-events:none;
   transition:transform .7s cubic-bezier(.2,1.2,.4,1),opacity .2s}
 .plate.open{transform:none;opacity:1;pointer-events:auto}
-.plate svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.plate .txt{position:absolute;inset:29% 25% 27%;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.plate .dish{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 18px rgba(42,39,36,.16))}
+.plate .txt{position:absolute;inset:24% 22% 34%;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .plate h3{margin:0 0 10px;font:400 clamp(28px,7vw,34px)/1 "Biro",cursive;color:var(--biro)}
 .plate p{margin:0 0 7px;font-size:clamp(12.5px,3.4vw,14px);line-height:1.45;text-wrap:balance}
 .plate small{margin-top:2px;font:500 9px/1.5 var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--graphite)}
-.plate .close{position:absolute;top:1%;right:1%;width:36px;height:36px;border-radius:50%;border:1.2px solid var(--pencil);background:var(--plate);
+.plate .close{position:absolute;top:9%;right:9%;width:36px;height:36px;border-radius:50%;border:1.2px solid var(--pencil);background:var(--plate);
   font:400 26px/1 var(--f-hand);cursor:pointer;color:var(--pencil)}
 .plate .close:focus-visible{outline:2px solid var(--pencil);outline-offset:2px}
 
@@ -238,30 +238,7 @@ img{display:block;max-width:100%}
 </button>
 
 <aside class="plate" id="plate" aria-label="About Ilayda" aria-hidden="true">
-  <svg viewBox="0 0 400 400" aria-hidden="true">
-    <defs><path id="rimPath" d="M200,200 m-158,0 a158,158 0 1,1 316,0 a158,158 0 1,1 -316,0"/></defs>
-    <path id="plateFill" fill="#f7f3ec"/>
-    <g filter="url(#crayon)" fill="none" stroke-linecap="round">
-      <path id="ringA" stroke="#d8432f" stroke-width="3.2"/>
-      <path id="ringB" stroke="#d8432f" stroke-width="2.4"/>
-      <path id="ringC" stroke="#d8432f" stroke-width="2"/>
-    </g>
-    <g filter="url(#pencil)" font-family="Reenie, cursive" font-size="25" fill="#d8432f" letter-spacing="3">
-      <text><textPath href="#rimPath" startOffset="6%">— ILAYDA —</textPath></text>
-      <text><textPath href="#rimPath" startOffset="56%">— LONDON —</textPath></text>
-    </g>
-    <!-- lemon wedge in yellow crayon -->
-    <g transform="translate(72 250) rotate(28)" filter="url(#crayon)" stroke-linecap="round" stroke-linejoin="round">
-      <clipPath id="lemonClip"><path d="M0,0 C20,1 70,-1 110,0 C104,32 82,56 55,56 C28,56 6,32 0,0Z"/></clipPath><path id="lemonHatch" clip-path="url(#lemonClip)" fill="none" stroke="#f2c94c" stroke-width="7"/>
-      <path d="M0,0 C20,1 70,-1 110,0 C104,32 82,56 55,56 C28,56 6,32 0,0Z" fill="none" stroke="#d9a71f" stroke-width="3"/>
-      <path d="M12,6 C20,30 36,44 55,44 C74,44 92,30 98,6" fill="none" stroke="#e6b729" stroke-width="2"/>
-      <path d="M55,6 L55,40 M55,6 L28,30 M55,6 L84,30" fill="none" stroke="#e6b729" stroke-width="2"/>
-    </g>
-    <!-- grey pencil fork -->
-    <g transform="translate(300 54) rotate(36)" filter="url(#pencil)" fill="none" stroke="#7d7a76" stroke-width="3" stroke-linecap="round">
-      <path d="M0,0 L0,40 M10,0 L10,40 M20,0 L20,40 M30,0 L30,40 M0,40 C0,56 30,56 30,40 M15,54 L15,150 M10,60 L10,148 M20,60 L20,148"/>
-    </g>
-  </svg>
+  <img class="dish" src="img/plate.webp" alt="" width="1320" height="1320">
   <div class="txt">
     <h3>Hi, I'm Ilayda</h3>
     <p>I work with data and technology, yep. But I've always loved creative things.</p>
@@ -356,15 +333,6 @@ const eyes=document.getElementById('eyes');
 addEventListener('pointermove',e=>{if(reduce)return;const r=eyes.getBoundingClientRect();
   const dx=(e.clientX-(r.left+r.width/2))/innerWidth,dy=(e.clientY-(r.top+r.height/2))/innerHeight;
   eyes.style.transform=`translate(${Math.max(-1,Math.min(1,dx))*14}px,${Math.max(-1,Math.min(1,dy))*6}px)`;});
-
-// plate drawn in crayon
-seed=21;
-document.getElementById('plateFill').setAttribute('d',loop(200,200,192,192)+'Z');
-document.getElementById('ringA').setAttribute('d',loop(200,200,190,190));
-document.getElementById('ringB').setAttribute('d',loop(200,200,176,176));
-document.getElementById('ringC').setAttribute('d',loop(200,200,140,140));
-let hatch='';for(let x=-30;x<=120;x+=6){hatch+=`M${x+j(1)},${-4} L${x+28+j(3)},${60}`;}
-document.getElementById('lemonHatch').setAttribute('d',hatch);
 
 const usta=document.getElementById('usta'),plate=document.getElementById('plate');
 function setPlate(open){plate.classList.toggle('open',open);usta.classList.toggle('open',open);
